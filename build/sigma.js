@@ -9653,12 +9653,19 @@
     context.fillStyle = (settings('labelColor') === 'node') ?
       (node.color || settings('defaultNodeColor')) :
       settings('defaultLabelColor');
-
-    context.fillText(
-      node.label,
-      Math.round(node[prefix + 'x'] + size - 85),
-      Math.round(node[prefix + 'y'] + fontSize / 3)
-    );
+      
+    var x = 40;
+    var y = 40;
+    var lineheight = 20;
+    var lines = node.label.split('\n');
+    
+    for (var i = 0; i<lines.length; i++) {
+      context.fillText(
+        lines[i],
+        Math.round(node[prefix + 'x'] + size - 95),
+        Math.round(node[prefix + 'y'] + fontSize - 30 + (i*lineheight))
+      );
+    }
   };
 }).call(this);
 
