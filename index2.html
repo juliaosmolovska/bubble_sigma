@@ -14,7 +14,8 @@
   </head>
   <body>
     <div id='sigma-container'></div>
-    <img src="example.png" width="800" height="500">
+    <!-- <img src="basics.png" width="800" height="500"> -->
+    <img src="payment_banks.png" width="800" height="500">
     <button onclick="updateGraph1()">Try it1</button>
     <button onclick="updateGraph2()">Try it2</button>
     <button onclick="updateGraph3()">Try it3</button>
@@ -43,13 +44,13 @@
       // Create a graph object
       var graph = {
         nodes: [
-          { id: 'n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
-          { id: 'n2', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
-          { id: "n3", label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
-          { id: "n4", label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
-          { id: "n5", label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
-          { id: "n6", label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
-          { id: "n7", label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '1n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: '1n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '1n3', label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: '1n4', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '1n5', label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '1n6', label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: '1n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
         ],
         edges: [
           // { id: "e0", source: "n0", target: "n1", color: 'red', type: 'line', size: 1},
@@ -64,20 +65,44 @@
       }
 
 
+      var graph2 = {
+        nodes: [
+          { id: '2n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: '2n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
+          { id: "2n3", label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: "2n4", label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: "2n5", label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: "2n6", label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: "2n7", label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '2n8', label: 'KYC/ AML/\nSanctions', x: 0.16, y: -0.12, size: 100, color: '#4ec6df' },
+          { id: '2n9', label: 'Testing', x: 0.25, y: -0.2, size: 90, color: '#4ec6df' },
+          { id: "2n10", label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
+          { id: "2n11", label: 'Audits', x: 0.2, y: -0.01, size: 100, color: '#4ec6df' },
+          { id: "2n12", label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
+          { id: "2n13", label: 'New\nProduct\nApproval', x: -0.13, y: 0.12, size: 100, color: '#4ec6df' },
+          { id: "2n14", label: 'Complaints', x: -0.14, y: -0.1, size: 120, color: '#4ec6df' },
+          { id: "2n15", label: 'Events', x: -0.14, y: -0.1, size: 120, color: '#4ec6df' },
+        ],
+        edges: [
+          // { id: "e0", source: "n0", target: "n1", color: 'red', type: 'line', size: 1},
+          // { id: "e1", source: "n1", target: "n2", color: 'red', type: 'line', size: 1},
+          // { id: "e2", source: "n2", target: "n3", color: 'red', type: 'line', size: 1},
+          // { id: "e3", source: "n3", target: "n4", color: 'red', type: 'line', size: 1},
+          // { id: "e4", source: "n4", target: "n0", color: 'red', type: 'line', size: 1},
+          // { id: "e5", source: "n4", target: "n2", color: '#E1E1E1', type: 'line', size: 1},
+          // { id: "e6", source: "n4", target: "n1", color: '#E1E1E1', type: 'line', size: 1},
+          // { id: "e7", source: "n1", target: "n3", color: '#E1E1E1', type: 'line', size: 1}
+        ]
+      }
+
       s.cameras[0].goTo({ x: 0, y: 0, angle: 0, ratio: 0.5 });
 
       // Load the graph in sigma
       s.graph.read(graph);
+      s.graph.read(graph2);
       s.refresh(graph);
+      s.refresh(graph2);
 
-      //var txt = "Outside\n Business\n Internet";
-      var x = 30;
-      var y = 30;
-      var lineheight = 15;
-      var lines = node.label.split('\n');
-      for (var i = 0; i<lines.length; i++)
-      context.fillText(lines[i], x, y + (i*lineheight) );
-      
       
     </script>
   </body>
