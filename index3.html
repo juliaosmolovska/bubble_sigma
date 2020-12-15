@@ -79,14 +79,54 @@
           { id: 'n30', label: 'Conduct', x: 0.21, y: 0.08, size: 85, color: '#e1e2f0' },
         ],
         edges: [
-          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
-          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
-          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
-          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
-          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
-          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
-          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
-          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
+          
+        ]
+      }
+      var graph_basics = {
+        nodes: [
+          { id: '1n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#21205f' },
+          { id: '1n2', label: 'Training', x: 0.02, y: -0.06, size: 120, color: '#21205f' },
+          { id: '1n3', label: 'Reports', x: 0.06, y: -0.01, size: 120, color: '#21205f' },
+          { id: '1n4', label: 'Outside\nBusiness\nInternet', x: 0.04, y: 0.05, size: 120, color: '#21205f' },
+          { id: '1n5', label: 'Issue\nManagment', x: -0.02, y: 0.06, size: 120, color: '#21205f' },
+          { id: '1n6', label: 'Privacy', x: -0.06, y: 0.01, size: 120, color: '#21205f' },
+          { id: '1n7', label: 'Events', x: -0.04, y: -0.05, size: 120, color: '#21205f' },
+          { id: '1n8', label: 'KYC/ AML/\nSanctions', x: 0.08, y: -0.07, size: 100, color: '#dbf4f9' },
+          { id: '1n9', label: 'Testing', x: 0.13, y: -0.11, size: 85, color: '#f9f9fc' },
+          { id: '1n10', label: 'Risk\nAssesment', x: 0.12, y: -0.03, size: 85, color: '#f9f9fc' },
+          { id: '1n11', label: 'Audits', x: 0.11, y: 0.03, size: 100, color: '#dbf4f9' },
+          { id: '1n12', label: 'Vendor Due\nDiligence', x: 0.015, y: 0.11, size: 100, color: '#dbf4f9' },
+          { id: '1n13', label: 'New\nProduct\nApproval', x: -0.08, y: 0.08, size: 100, color: '#dbf4f9' },
+          { id: '1n14', label: 'Complaints', x: -0.12, y: 0.03, size: 100, color: '#dbf4f9' },
+          { id: '1n15', label: 'Advertising\n& Marketing', x: -0.1, y: -0.04, size: 100, color: '#dbf4f9' },
+          { id: '1n16', label: 'Market\nManipu-\nlation', x: 0.17, y: -0.07, size: 85, color: '#f9f9fc' },
+          { id: '1n17', label: 'Suitablity', x: 0.2, y: -0.01, size: 85, color: '#f9f9fc' },
+          { id: '1n18', label: 'Conflict', x: 0.09, y: 0.09, size: 100, color: '#dbf4f9' },
+          { id: '1n19', label: 'Best\nExecution', x: -0.14, y: 0.09, size: 85, color: '#f9f9fc' },
+          { id: '1n20', label: 'Regulatory\nEngagment', x: -0.19, y: 0.02, size: 85, color: '#f9f9fc' },
+          { id: '1n21', label: 'Personal\nTrading', x: -0.08, y: -0.1, size: 85, color: '#f9f9fc' },
+          { id: '1n22', label: 'Communi\ncation\nwith\npublic', x: 0.16, y: 0.04, size: 85, color: '#f9f9fc' },
+          { id: '1n23', label: 'Gover-\nnance', x: -0.2, y: -0.04, size: 85, color: '#f9f9fc' },
+          { id: '1n24', label: 'Concen\ntration', x: -0.02, y: -0.11, size: 100, color: '#dbf4f9' },
+          { id: '1n25', label: 'Credit\nDenials', x: 0.14, y: 0.11, size: 85, color: '#f9f9fc' },
+          { id: '1n26', label: 'Truth in\nLending', x: 0.06, y: 0.13, size: 85, color: '#f9f9fc' },
+          { id: '1n27', label: 'CRA', x: -0.04, y: 0.13, size: 85, color: '#f9f9fc' },
+          { id: '1n28', label: 'UDAAP', x: -0.15, y: -0.01, size: 85, color: '#f9f9fc' },
+          { id: '1n29', label: 'Lending\nLimits', x: -0.16, y: -0.08, size: 85, color: '#f9f9fc' },
+          { id: '1n30', label: 'Conduct', x: 0.21, y: 0.08, size: 85, color: '#f9f9fc' },
+        ],
+        edges: [
+          { id: 'e1', source: '1n1', target: '1n2', color: '#grey', type: 'line', size: 1},
+          // { id: 'e2', source: '1n1', target: '1n2', color: '#d0d0d0', type: 'line', size: 1},
+          // { id: 'e3', source: '1n2', target: '1n3', color: '#d0d0d0', type: 'line', size: 1},
+          // { id: 'e4', source: '1n3', target: '1n4', color: '#d0d0d0', type: 'line', size: 1},
+          // { id: 'e5', source: '1n4', target: '1n8', color: '#d0d0d0', type: 'line', size: 1},
+          // { id: 'e6', source: '1n4', target: '1n2', color: '#d0d0d0', type: 'line', size: 1},
+          // { id: 'e7', source: '1n4', target: '1n1', color: '#d0d0d0', type: 'line', size: 1},
+          // { id: 'e8', source: '1n1', target: '1n3', color: '#d0d0d0', type: 'line', size: 1}
+          // { id: 'e9', source: '1n1', target: '1n3', color: '#d0d0d0', type: 'line', size: 1}
+          // { id: 'e10', source: '1n1', target: '1n3', color: '#d0d0d0', type: 'line', size: 1}
+          // { id: 'e11', source: '1n1', target: '1n3', color: '#d0d0d0', type: 'line', size: 1}
         ]
       }
 
@@ -94,13 +134,13 @@
 
       // Load the graph in sigma
       s.graph.read(graph);
-      // s.graph.read(graph2);
+      s.graph.read(graph_basics);
       // s.graph.read(graph3);
       // s.graph.read(graph4);
       // s.graph.read(graph5);
       // s.graph.read(graph6);
       s.refresh(graph);
-      // s.refresh(graph2);
+      s.refresh(graph_basics);
       // s.refresh(graph3);
       // s.refresh(graph4);
       // s.refresh(graph5);
