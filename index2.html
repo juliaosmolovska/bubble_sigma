@@ -1,24 +1,27 @@
 <html>
   <head>
     <title>example from figma</title>
-    <script src="build/sigma.js"></script>
-    <script src="build/plugins/sigma.renderers.edgeLabels/settings.js"></script>
-    <script src="build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
-    <script src="build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
-    <script src="build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+    <script src='build/sigma.js'></script>
+    <script src='build/plugins/sigma.renderers.edgeLabels/settings.js'></script>
+    <script src='build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js'></script>
+    <script src='build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js'></script>
+    <script src='build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js'></script>
     <style>
       html { height:100%;}
       body { height:100%;}
-      #sigma-container { width:100%; height:60%;  background-color:#E1E1E1; }
+      #sigma-container { width:100%; height:60%;  background-color:'white'; }
     </style>
   </head>
   <body>
     <div id='sigma-container'></div>
-    <!-- <img src="basics.png" width="800" height="500"> -->
-    <img src="payment_banks.png" width="800" height="500">
-    <button onclick="updateGraph1()">Try it1</button>
-    <button onclick="updateGraph2()">Try it2</button>
-    <button onclick="updateGraph3()">Try it3</button>
+    <!-- <img src='basics.png' width='800' height='500'> -->
+    <!-- <img src='payment_banks.png' width='800' height='500'> -->
+    <!-- <img src='exchange.png' width='800' height='500'> -->
+    <img src='lending.png' width='800' height='500'>
+    <!-- <img src='digital_assets.png' width='800' height='500'> -->
+    <button onclick='updateGraph1()'>Try it1</button>
+    <button onclick='updateGraph2()'>Try it2</button>
+    <button onclick='updateGraph3()'>Try it3</button>
     <script>
     
       // Initialise sigma:
@@ -53,45 +56,202 @@
           { id: '1n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
         ],
         edges: [
-          // { id: "e0", source: "n0", target: "n1", color: 'red', type: 'line', size: 1},
-          // { id: "e1", source: "n1", target: "n2", color: 'red', type: 'line', size: 1},
-          // { id: "e2", source: "n2", target: "n3", color: 'red', type: 'line', size: 1},
-          // { id: "e3", source: "n3", target: "n4", color: 'red', type: 'line', size: 1},
-          // { id: "e4", source: "n4", target: "n0", color: 'red', type: 'line', size: 1},
-          // { id: "e5", source: "n4", target: "n2", color: '#E1E1E1', type: 'line', size: 1},
-          // { id: "e6", source: "n4", target: "n1", color: '#E1E1E1', type: 'line', size: 1},
-          // { id: "e7", source: "n1", target: "n3", color: '#E1E1E1', type: 'line', size: 1}
+          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
+          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
+          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
+          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
+          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
+          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
         ]
       }
-
 
       var graph2 = {
         nodes: [
           { id: '2n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
           { id: '2n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
-          { id: "2n3", label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
-          { id: "2n4", label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
-          { id: "2n5", label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
-          { id: "2n6", label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
-          { id: "2n7", label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '2n3', label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: '2n4', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '2n5', label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '2n6', label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: '2n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
           { id: '2n8', label: 'KYC/ AML/\nSanctions', x: 0.16, y: -0.12, size: 100, color: '#4ec6df' },
           { id: '2n9', label: 'Testing', x: 0.25, y: -0.2, size: 90, color: '#4ec6df' },
-          { id: "2n10", label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
-          { id: "2n11", label: 'Audits', x: 0.2, y: -0.01, size: 100, color: '#4ec6df' },
-          { id: "2n12", label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
-          { id: "2n13", label: 'New\nProduct\nApproval', x: -0.13, y: 0.12, size: 100, color: '#4ec6df' },
-          { id: "2n14", label: 'Complaints', x: -0.14, y: -0.1, size: 120, color: '#4ec6df' },
-          { id: "2n15", label: 'Events', x: -0.14, y: -0.1, size: 120, color: '#4ec6df' },
+          { id: '2n10', label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
+          { id: '2n11', label: 'Audits', x: 0.2, y: 0.025, size: 100, color: '#4ec6df' },
+          { id: '2n12', label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
+          { id: '2n13', label: 'New\nProduct\nApproval', x: -0.16, y: 0.1, size: 100, color: '#4ec6df' },
+          { id: '2n14', label: 'Complaints', x: -0.2, y: -0.02, size: 100, color: '#4ec6df' },
+          { id: '2n15', label: 'Advertising\n& Marketing', x: -0.14, y: -0.1, size: 100, color: '#4ec6df' },
         ],
         edges: [
-          // { id: "e0", source: "n0", target: "n1", color: 'red', type: 'line', size: 1},
-          // { id: "e1", source: "n1", target: "n2", color: 'red', type: 'line', size: 1},
-          // { id: "e2", source: "n2", target: "n3", color: 'red', type: 'line', size: 1},
-          // { id: "e3", source: "n3", target: "n4", color: 'red', type: 'line', size: 1},
-          // { id: "e4", source: "n4", target: "n0", color: 'red', type: 'line', size: 1},
-          // { id: "e5", source: "n4", target: "n2", color: '#E1E1E1', type: 'line', size: 1},
-          // { id: "e6", source: "n4", target: "n1", color: '#E1E1E1', type: 'line', size: 1},
-          // { id: "e7", source: "n1", target: "n3", color: '#E1E1E1', type: 'line', size: 1}
+          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
+          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
+          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
+          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
+          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
+          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
+        ]
+      }
+
+      var graph3 = {
+        nodes: [
+          { id: '3n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: '3n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '3n3', label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: '3n4', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '3n5', label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '3n6', label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: '3n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '3n8', label: 'KYC/ AML/\nSanctions', x: 0.16, y: -0.12, size: 100, color: '#4ec6df' },
+          { id: '3n9', label: 'Testing', x: 0.25, y: -0.2, size: 90, color: '#4ec6df' },
+          { id: '3n10', label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
+          { id: '3n11', label: 'Audits', x: 0.2, y: 0.025, size: 100, color: '#4ec6df' },
+          { id: '3n12', label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
+          { id: '3n13', label: 'New\nProduct\nApproval', x: -0.16, y: 0.1, size: 100, color: '#4ec6df' },
+          { id: '3n14', label: 'Complaints', x: -0.2, y: -0.02, size: 100, color: '#4ec6df' },
+          { id: '3n15', label: 'Advertising\n& Marketing', x: -0.14, y: -0.1, size: 100, color: '#4ec6df' },
+          { id: '3n16', label: 'Market\nManipu-\nlation', x: 0.33, y: -0.15, size: 90, color: '#e1e2f0' },
+          { id: '3n17', label: 'Suitablity', x: 0.3, y: -0.02, size: 90, color: '#e1e2f0' },
+          { id: '3n18', label: 'Conflict', x: 0.15, y: 0.13, size: 90, color: '#e1e2f0' },
+          { id: '3n19', label: 'Best\nExecution', x: -0.22, y: 0.05, size: 90, color: '#e1e2f0' },
+          { id: '3n20', label: 'Regulatory\nEngagment', x: -0.3, y: -0.05, size: 90, color: '#e1e2f0' },
+          { id: '3n21', label: 'Personal\nTrading', x: -0.11, y: -0.17, size: 90, color: '#e1e2f0' },
+        ],
+        edges: [
+          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
+          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
+          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
+          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
+          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
+          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
+        ]
+      }
+
+      var graph4 = {
+        nodes: [
+          { id: '4n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: '4n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '4n3', label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: '4n4', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '4n5', label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '4n6', label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: '4n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '4n8', label: 'KYC/ AML/\nSanctions', x: 0.16, y: -0.12, size: 100, color: '#4ec6df' },
+          { id: '4n9', label: 'Testing', x: 0.25, y: -0.2, size: 90, color: '#4ec6df' },
+          { id: '4n10', label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
+          { id: '4n11', label: 'Audits', x: 0.2, y: 0.025, size: 100, color: '#4ec6df' },
+          { id: '4n12', label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
+          { id: '4n13', label: 'New\nProduct\nApproval', x: -0.16, y: 0.1, size: 100, color: '#4ec6df' },
+          { id: '4n14', label: 'Complaints', x: -0.2, y: -0.02, size: 100, color: '#4ec6df' },
+          { id: '4n15', label: 'Advertising\n& Marketing', x: -0.14, y: -0.1, size: 100, color: '#4ec6df' },
+          { id: '4n16', label: 'Market\nManipu-\nlation', x: 0.33, y: -0.15, size: 90, color: '#e1e2f0' },
+          { id: '4n17', label: 'Suitablity', x: 0.3, y: -0.02, size: 90, color: '#e1e2f0' },
+          { id: '4n18', label: 'Conflict', x: 0.15, y: 0.13, size: 90, color: '#e1e2f0' },
+          { id: '4n19', label: 'Best\nExecution', x: -0.22, y: 0.05, size: 90, color: '#e1e2f0' },
+          { id: '4n20', label: 'Regulatory\nEngagment', x: -0.3, y: -0.05, size: 90, color: '#e1e2f0' },
+          { id: '4n21', label: 'Personal\nTrading', x: -0.11, y: -0.17, size: 90, color: '#e1e2f0' },
+          { id: '4n22', label: 'Communi\ncation\nwith\npublic', x: 0.33, y: 0.04, size: 90, color: '#e1e2f0' },
+          { id: '4n23', label: 'Gover-\nnance', x: -0.4, y: -0.1, size: 90, color: '#e1e2f0' },
+          { id: '4n24', label: 'Concen\ntration', x: -0.01, y: -0.18, size: 90, color: '#e1e2f0' },
+          { id: '4n25', label: 'Credit\nDenials', x: 0.25, y: 0.18, size: 90, color: '#e1e2f0' },
+          { id: '4n26', label: 'Truth in\nLending', x: 0.14, y: 0.2, size: 90, color: '#e1e2f0' },
+          { id: '4n27', label: 'CRA', x: -0.06, y: 0.2, size: 90, color: '#e1e2f0' },
+          { id: '4n28', label: 'UDAAP', x: -0.23, y: -0.1, size: 90, color: '#e1e2f0' },
+          { id: '4n29', label: 'Lending\nLimits', x: -0.27, y: -0.17, size: 90, color: '#e1e2f0' },
+        ],
+        edges: [
+          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
+          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
+          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
+          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
+          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
+          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
+        ]
+      }
+      
+      var graph5 = {
+        nodes: [
+          { id: '5n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: '5n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '5n3', label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: '5n4', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '5n5', label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '5n6', label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: '5n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '5n8', label: 'KYC/ AML/\nSanctions', x: 0.16, y: -0.12, size: 100, color: '#4ec6df' },
+          { id: '5n9', label: 'Testing', x: 0.25, y: -0.2, size: 90, color: '#4ec6df' },
+          { id: '5n10', label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
+          { id: '5n11', label: 'Audits', x: 0.2, y: 0.025, size: 100, color: '#4ec6df' },
+          { id: '5n12', label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
+          { id: '5n13', label: 'New\nProduct\nApproval', x: -0.16, y: 0.1, size: 100, color: '#4ec6df' },
+          { id: '5n14', label: 'Complaints', x: -0.2, y: -0.02, size: 100, color: '#4ec6df' },
+          { id: '5n15', label: 'Advertising\n& Marketing', x: -0.14, y: -0.1, size: 100, color: '#4ec6df' },
+          { id: '5n16', label: 'Market\nManipu-\nlation', x: 0.33, y: -0.15, size: 90, color: '#e1e2f0' },
+          { id: '5n17', label: 'Suitablity', x: 0.3, y: -0.02, size: 90, color: '#e1e2f0' },
+          { id: '5n18', label: 'Conflict', x: 0.15, y: 0.13, size: 90, color: '#e1e2f0' },
+          { id: '5n19', label: 'Best\nExecution', x: -0.22, y: 0.05, size: 90, color: '#e1e2f0' },
+          { id: '5n20', label: 'Regulatory\nEngagment', x: -0.3, y: -0.05, size: 90, color: '#e1e2f0' },
+          { id: '5n21', label: 'Personal\nTrading', x: -0.11, y: -0.17, size: 90, color: '#e1e2f0' },
+          { id: '5n22', label: 'Communi\ncation\nwith\npublic', x: 0.33, y: 0.04, size: 90, color: '#e1e2f0' },
+          { id: '5n23', label: 'Gover-\nnance', x: -0.4, y: -0.1, size: 90, color: '#e1e2f0' },
+          { id: '5n24', label: 'Concen\ntration', x: -0.01, y: -0.18, size: 90, color: '#e1e2f0' },
+        ],
+        edges: [
+          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
+          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
+          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
+          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
+          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
+          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
+        ]
+      }
+
+      var graph6 = {
+        nodes: [
+          { id: '6n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: '6n2', label: 'Training', x: 0.06, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '6n3', label: 'Reports', x: 0.1, y: -0.01, size: 120, color: '#686fb4' },
+          { id: '6n4', label: 'Outside\nBusiness\nInternet', x: 0.06, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '6n5', label: 'Issue\nManagment', x: -0.04, y: 0.1, size: 120, color: '#686fb4' },
+          { id: '6n6', label: 'Privacy', x: -0.1, y: 0.01, size: 120, color: '#686fb4' },
+          { id: '6n7', label: 'Events', x: -0.04, y: -0.1, size: 120, color: '#686fb4' },
+          { id: '6n8', label: 'KYC/ AML/\nSanctions', x: 0.16, y: -0.12, size: 100, color: '#4ec6df' },
+          { id: '6n9', label: 'Testing', x: 0.25, y: -0.2, size: 90, color: '#4ec6df' },
+          { id: '6n10', label: 'Risk\nAssesment', x: 0.25, y: -0.09, size: 90, color: '#4ec6df' },
+          { id: '6n11', label: 'Audits', x: 0.2, y: 0.025, size: 100, color: '#4ec6df' },
+          { id: '6n12', label: 'Vendor Due\nDiligence', x: 0.02, y: 0.18, size: 100, color: '#4ec6df' },
+          { id: '6n13', label: 'New\nProduct\nApproval', x: -0.16, y: 0.1, size: 100, color: '#4ec6df' },
+          { id: '6n14', label: 'Complaints', x: -0.2, y: -0.02, size: 100, color: '#4ec6df' },
+          { id: '6n15', label: 'Advertising\n& Marketing', x: -0.14, y: -0.1, size: 100, color: '#4ec6df' },
+          { id: '6n16', label: 'Market\nManipu-\nlation', x: 0.33, y: -0.15, size: 90, color: '#e1e2f0' },
+          { id: '6n17', label: 'Suitablity', x: 0.3, y: -0.02, size: 90, color: '#e1e2f0' },
+          { id: '6n18', label: 'Conflict', x: 0.15, y: 0.13, size: 90, color: '#e1e2f0' },
+          { id: '6n19', label: 'Best\nExecution', x: -0.22, y: 0.05, size: 90, color: '#e1e2f0' },
+          { id: '6n20', label: 'Regulatory\nEngagment', x: -0.3, y: -0.05, size: 90, color: '#e1e2f0' },
+          { id: '6n21', label: 'Personal\nTrading', x: -0.11, y: -0.17, size: 90, color: '#e1e2f0' },
+          { id: '6n22', label: 'Communi\ncation\nwith\npublic', x: 0.33, y: 0.04, size: 90, color: '#e1e2f0' },
+          { id: '6n23', label: 'Gover-\nnance', x: -0.4, y: -0.1, size: 90, color: '#e1e2f0' },
+          { id: '6n24', label: 'Concen\ntration', x: -0.01, y: -0.18, size: 90, color: '#e1e2f0' },
+        ],
+        edges: [
+          // { id: 'e0', source: 'n0', target: 'n1', color: 'red', type: 'line', size: 1},
+          // { id: 'e1', source: 'n1', target: 'n2', color: 'red', type: 'line', size: 1},
+          // { id: 'e2', source: 'n2', target: 'n3', color: 'red', type: 'line', size: 1},
+          // { id: 'e3', source: 'n3', target: 'n4', color: 'red', type: 'line', size: 1},
+          // { id: 'e4', source: 'n4', target: 'n0', color: 'red', type: 'line', size: 1},
+          // { id: 'e5', source: 'n4', target: 'n2', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e6', source: 'n4', target: 'n1', color: '#E1E1E1', type: 'line', size: 1},
+          // { id: 'e7', source: 'n1', target: 'n3', color: '#E1E1E1', type: 'line', size: 1}
         ]
       }
 
@@ -100,8 +260,16 @@
       // Load the graph in sigma
       s.graph.read(graph);
       s.graph.read(graph2);
+      s.graph.read(graph3);
+      s.graph.read(graph4);
+      s.graph.read(graph5);
+      s.graph.read(graph6);
       s.refresh(graph);
       s.refresh(graph2);
+      s.refresh(graph3);
+      s.refresh(graph4);
+      s.refresh(graph5);
+      s.refresh(graph6);
 
       
     </script>
