@@ -13,12 +13,12 @@
     </style>
   </head>
   <body>
-    <button onclick="updateGraph1()">basics</button>
-    <button onclick="updateGraph2()">payment_banks</button>
-    <button onclick="updateGraph3()">exchange</button>
-    <button onclick="updateGraph4()">lending</button>
-    <button onclick="updateGraph5()">digital_assets</button>
-    <button onclick="updateGraph6()">tech</button>
+    <button onmouseover="updateGraph1()" onmouseout="updateGraph()">basics</button>
+    <button onmouseover="updateGraph2()" onmouseout="updateGraph()">payment_banks</button>
+    <button onmouseover="updateGraph3()" onmouseout="updateGraph()">exchange</button>
+    <button onmouseover="updateGraph4()" onmouseout="updateGraph()">lending</button>
+    <button onmouseover="updateGraph5()" onmouseout="updateGraph()">digital_assets</button>
+    <button onmouseover="updateGraph6()" onmouseout="updateGraph()">tech</button>
     <div id='sigma-container'></div>
     <script>
     
@@ -36,7 +36,10 @@
             edgesPowRatio: 1,
             maxNodeSize: 30,  //change number for Nodes size
             maxEdgeSize: 0.2, //change number for Edges size
-            edgeLabelSize: 'proportional'
+            edgeLabelSize: 'proportional',
+            font: 'Tahoma',
+            mouseWheelEnabled: false,
+            fontSize: 20
           }
         }
       );
@@ -454,6 +457,14 @@
       
       s.graph.read(graph);
       s.refresh(graph);
+
+      function updateGraph() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph);
+        s.refresh();
+      };
 
       function updateGraph1() {
         console.log('click');

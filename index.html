@@ -14,11 +14,11 @@
   </head>
   <body>
     <div id='sigma-container'></div>
-    <img src="example.png" width="800" height="500">
+    <!-- <img src="example.png" width="800" height="500"> -->
 
-    <button onclick="updateGraph1()">Try it1</button>
+    <!-- <button onclick="updateGraph1()">Try it1</button>
     <button onclick="updateGraph2()">Try it2</button>
-    <button onclick="updateGraph3()">Try it3</button>
+    <button onclick="updateGraph3()">Try it3</button> -->
     <script>
       // Initialise sigma:
       var s = new sigma(
@@ -38,24 +38,12 @@
           }
         }
       );
-
-      var second = "Second \n\n\n\nnode";
-      var node = "node";
-      
-      var multiStr = "This is the first line" +
-                      "This is the second line" +
-                      "This is more...";
-  
-  
-  var multiStr2 = "This is the first line \
-                  This is the second line \
-                  This is more...";
       
       // Create a graph object
       var graph = {
         nodes: [
           { id: "n0", label: "First node", x: 0, y: 0, size: 100, color: '#008cc2' },
-          { id: "n1", label: multiStr2, x: 0.1, y: 0.1, size: 100, color: '#008cc2' },
+          { id: "n1", label: "S", x: 0.1, y: 0.1, size: 100, color: '#008cc2' },
           { id: "n2", label: "Third node", x: 0.1, y: 0.3, size: 100, color: '#008cc2' },
           { id: "n3", label: "Fourth node", x: 0.05, y: 0.4, size: 100, color: '#008cc2' },
           { id: "n4", label: "Fifth node \nsjd", x: 0.4, y: 0.2, size: 100, color: '#008cc2' }
@@ -93,11 +81,11 @@
       s.graph.read(graph);
       s.refresh(graph);
 
-      function updateGraph1() {
-        console.log('click');
-        s.graph.read(graph2);
-        s.refresh();
-      };
+      // function updateGraph1() {
+      //   console.log('click');
+      //   s.graph.read(graph2);
+      //   s.refresh();
+      // };
       
       // function updateGraph2() {
       //   console.log('click');

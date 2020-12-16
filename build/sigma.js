@@ -9647,6 +9647,7 @@
     fontSize = (settings('labelSize') === 'fixed') ?
       settings('defaultLabelSize') :
       settings('labelSizeRatio') * size;
+    context.textAlign = 'center'; //centering label
 
     context.font = (settings('fontStyle') ? settings('fontStyle') + ' ' : '') +
       fontSize + 'px ' + settings('font');
@@ -9662,8 +9663,8 @@
     for (var i = 0; i<lines.length; i++) {
       context.fillText(
         lines[i],
-        Math.round(node[prefix + 'x'] + size - 95),
-        Math.round(node[prefix + 'y'] + fontSize - 30 + (i*lineheight))
+        Math.round(node[prefix + 'x'] + size - 57), //placing label
+        Math.round(node[prefix + 'y'] + fontSize - 20 + (i*lineheight))
       );
     }
   };
