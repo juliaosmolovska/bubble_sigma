@@ -9,19 +9,17 @@
     <style>
       html { height:100%;}
       body { height:100%;}
-      #sigma-container { width:100%; height:100%;  background-color:'white'; }
+      #sigma-container { width:100%; height:95%;  background-color:'white'; }
     </style>
   </head>
   <body>
+    <button onclick="updateGraph1()">basics</button>
+    <button onclick="updateGraph2()">payment_banks</button>
+    <button onclick="updateGraph3()">exchange</button>
+    <button onclick="updateGraph4()">lending</button>
+    <button onclick="updateGraph5()">digital_assets</button>
+    <button onclick="updateGraph6()">tech</button>
     <div id='sigma-container'></div>
-    <!-- <img src='basics.png' width='800' height='500'> -->
-    <!-- <img src='payment_banks.png' width='800' height='500'> -->
-    <!-- <img src='exchange.png' width='800' height='500'> -->
-    <!-- <img src='lending.png' width='800' height='500'> -->
-    <!-- <img src='digital_assets.png' width='800' height='500'> -->
-    <button onclick='updateGraph1()'>Try it1</button>
-    <button onclick='updateGraph2()'>Try it2</button>
-    <button onclick='updateGraph3()'>Try it3</button>
     <script>
     
       // Initialise sigma:
@@ -36,7 +34,7 @@
             defaultLabelColor: 'white',
             nodesPowRatio: 1,
             edgesPowRatio: 1,
-            maxNodeSize: 35,  //change number for Nodes size
+            maxNodeSize: 30,  //change number for Nodes size
             maxEdgeSize: 0.2, //change number for Edges size
             edgeLabelSize: 'proportional'
           }
@@ -455,21 +453,55 @@
       // Load the graph in sigma
       
       s.graph.read(graph);
-      //s.graph.read(graph_basics);
-      //s.graph.read(graph_payment_banks);
-      //s.graph.read(graph_exchange);
-      //s.graph.read(graph_lending);
-      //s.graph.read(graph_digital_assets);
-      //s.graph.read(graph_tech);
-
       s.refresh(graph);
-      //s.refresh(graph_basics);
-      //s.refresh(graph_payment_banks);
-      //s.refresh(graph_exchange);
-      //s.refresh(graph_lending);
-      //s.refresh(graph_digital_assets);
-      //s.refresh(graph_tech);
 
+      function updateGraph1() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph_basics);
+        s.refresh();
+      };
+
+      function updateGraph2() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph_payment_banks);
+        s.refresh();
+      };
+
+      function updateGraph3() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph_exchange);
+        s.refresh();
+      };
+
+      function updateGraph4() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph_lending);
+        s.refresh();
+      };
+
+      function updateGraph5() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph_digital_assets);
+        s.refresh();
+      };
+
+      function updateGraph6() {
+        console.log('click');
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph_tech);
+        s.refresh();
+      };
 
       
     </script>
