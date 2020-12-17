@@ -9637,28 +9637,50 @@
     var fontSize,
         prefix = settings('prefix') || '',
         size = node[prefix + 'size'];
-
+        
     if (size < settings('labelThreshold'))
       return;
-
+      
     if (!node.label || typeof node.label !== 'string')
       return;
-
+      
     fontSize = (settings('labelSize') === 'fixed') ?
       settings('defaultLabelSize') :
       settings('labelSizeRatio') * size;
     context.textAlign = 'center'; //centering label
-
+    
     context.font = (settings('fontStyle') ? settings('fontStyle') + ' ' : '') +
       fontSize + 'px ' + settings('font');
     context.fillStyle = (settings('labelColor') === 'node') ?
       (node.color || settings('defaultNodeColor')) :
       settings('defaultLabelColor');
       
-    var x = 40;
-    var y = 40;
-    var lineheight = 20;
+    var x;
+    var y;
+    var lineheight;
+    
     var lines = node.label.split('\n');
+    
+    if (node.color == '#e1e2f0') { //label with the smallest radius
+      context.fillStyle = '#2a2966';
+      context.font = 'bold 10px Tahoma';
+      x = 10;
+      y = 10;
+      lineheight = 10;
+    } else if (node.color == '#f9f9fc') { //label with the smallest radius & light background
+      context.fillStyle = '#d3d2df';
+      context.font = 'bold 10px Tahoma';
+      x = 10;
+      y = 10;
+      lineheight = 10;
+    } else { //with the largest radius
+      context.fillStyle = '#f8fcfd';
+      context.font = 'bold 14px Tahoma';
+      x = 40;
+      y = 40;
+      lineheight = 20;
+    }
+    
     
     for (var i = 0; i<lines.length; i++) {
       context.fillText(

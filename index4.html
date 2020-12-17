@@ -37,7 +37,6 @@
             maxNodeSize: 30,  //change number for Nodes size
             maxEdgeSize: 0.2, //change number for Edges size
             edgeLabelSize: 'proportional',
-            font: 'Tahoma',
             mouseWheelEnabled: false,
             fontSize: 20
           }
@@ -450,70 +449,70 @@
           { id: '6e19', source: '6n12', target: '6n4', color: '#696969', type: 'line', size: 1},
         ]
       }
-
-      s.cameras[0].goTo({ x: 0, y: 0, angle: 0, ratio: 0.5 });
-
-      // Load the graph in sigma
       
+      s.cameras[0].goTo({ x: 0, y: 0, angle: 0, ratio: 0.5 });
+      
+      // Load the graph in sigma
+    
       s.graph.read(graph);
       s.refresh(graph);
-
+      
+      // s.graph.nodes().forEach(function(node) {
+      //   if (node.id == 'n9') {
+      //     node.color = 'red'
+      //   }
+      // });
+      // s.refresh();
+      
       function updateGraph() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph);
         s.refresh();
       };
-
+      
       function updateGraph1() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph_basics);
         s.refresh();
       };
-
+      
       function updateGraph2() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph_payment_banks);
         s.refresh();
       };
-
+      
       function updateGraph3() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph_exchange);
         s.refresh();
       };
-
+      
       function updateGraph4() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph_lending);
         s.refresh();
+        s.graph.clear(graph);
       };
-
+      
       function updateGraph5() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph_digital_assets);
         s.refresh();
       };
-
+      
       function updateGraph6() {
-        console.log('click');
         s.graph.clear(graph);
         s.refresh();
         s.graph.read(graph_tech);
         s.refresh();
       };
-
       
     </script>
   </body>
