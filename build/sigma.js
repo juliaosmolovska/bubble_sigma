@@ -9657,36 +9657,60 @@
       
     var x;
     var y;
+    var w;
+    var z;
     var lineheight;
     
     var lines = node.label.split('\n');
     
-    if (node.color == '#e1e2f0') { //label with the smallest radius
+    if (node.color == '#e1e2f0') { //the smallest on the main screen
       context.fillStyle = '#2a2966';
       context.font = 'bold 10px Tahoma';
       x = 10;
       y = 10;
       lineheight = 10;
-    } else if (node.color == '#f9f9fc') { //label with the smallest radius & light background
+      w = 45;
+      z = 15;
+    } else if (node.color == '#f9f9fc') { //the smallest on the secondary screen
       context.fillStyle = '#d3d2df';
       context.font = 'bold 10px Tahoma';
       x = 10;
       y = 10;
       lineheight = 10;
+      w = 45;
+      z = 15;
+    } else if ( node.size == '85') {  //the smallest on the secondary screen and hover
+      context.fillStyle = '#f8fcfd';
+      context.font = 'bold 10px Tahoma';
+      x = 10;
+      y = 10;
+      lineheight = 10;
+      w = 45;
+      z = 15;
+    } else if ( node.size == '100') { // medium size
+      context.fillStyle = '#f8fcfd';
+      context.font = 'bold 12px Tahoma';
+      x = 10;
+      y = 10;
+      lineheight = 15;
+      w = 55;
+      z = 20;
     } else { //with the largest radius
       context.fillStyle = '#f8fcfd';
       context.font = 'bold 14px Tahoma';
       x = 40;
       y = 40;
       lineheight = 20;
+      w = 55;
+      z = 20;
     }
     
     
     for (var i = 0; i<lines.length; i++) {
       context.fillText(
         lines[i],
-        Math.round(node[prefix + 'x'] + size - 57), //placing label
-        Math.round(node[prefix + 'y'] + fontSize - 20 + (i*lineheight))
+        Math.round(node[prefix + 'x'] + size - w), //placing label
+        Math.round(node[prefix + 'y'] + fontSize - z + (i*lineheight))
       );
     }
   };
