@@ -84,6 +84,35 @@
           { id: 'n30', label: 'Conduct', x: 0.21, y: 0.08, size: 85, color: '#e1e2f0' },
         ],
         edges: [
+          { id: 'e1', source: 'n1', target: 'n2', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e2', source: 'n1', target: 'n2', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e3', source: 'n1', target: 'n3', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e4', source: 'n1', target: 'n4', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e5', source: 'n1', target: 'n5', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e6', source: 'n1', target: 'n6', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e7', source: 'n1', target: 'n7', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e8', source: 'n2', target: 'n3', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e9', source: 'n3', target: 'n4', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e10', source: 'n4', target: 'n5', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e11', source: 'n5', target: 'n6', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e12', source: 'n6', target: 'n7', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e13', source: 'n7', target: 'n2', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e14', source: 'n2', target: 'n8', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e15', source: 'n3', target: 'n8', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e16', source: 'n8', target: 'n9', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e17', source: 'n8', target: 'n10', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e18', source: 'n10', target: 'n9', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e19', source: 'n11', target: 'n10', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e20', source: 'n11', target: 'n3', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e21', source: 'n12', target: 'n4', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e22', source: 'n13', target: 'n5', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e23', source: 'n12', target: 'n13', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e24', source: 'n6', target: 'n13', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e25', source: 'n6', target: 'n14', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e26', source: 'n13', target: 'n14', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e27', source: 'n6', target: 'n15', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e28', source: 'n14', target: 'n15', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
+          { id: 'e29', source: 'n7', target: 'n15', color: 'rgb(190,190,190,0)', type: 'line', size: 1},
         ]
       }
       
@@ -119,6 +148,21 @@
           { id: 'n28', color: '#f9f9fc' },
           { id: 'n29', color: '#f9f9fc' },
           { id: 'n30', color: '#f9f9fc' }
+        ],
+        edges: [
+          { id: 'e1', color: '#696969'},
+          { id: 'e2', color: '#696969'},
+          { id: 'e3', color: '#696969'},
+          { id: 'e4', color: '#696969'},
+          { id: 'e5', color: '#696969'},
+          { id: 'e6', color: '#696969'},
+          { id: 'e7', color: '#696969'},
+          { id: 'e8', color: '#696969'},
+          { id: 'e9', color: '#696969'},
+          { id: 'e10', color: '#696969'},
+          { id: 'e11', color: '#696969'},
+          { id: 'e12', color: '#696969'},
+          { id: 'e13', color: '#696969'},
         ]
       }
       
@@ -318,6 +362,13 @@
           if (nodeToUpdate) {
             node.color = nodeToUpdate.color;
             console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.graph.edges().forEach(function(edge) {
+          let edgeToUpdate = basics_data.edges.find(function(e) { return e.id == edge.id })
+          if (edgeToUpdate) {
+            edge.color = edgeToUpdate.color;
+            console.log(`edge.id ${edge.id} - edgeToUpdate ${edgeToUpdate.color}`);
           }
         });
         s.refresh();

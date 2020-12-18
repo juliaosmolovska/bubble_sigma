@@ -1,11 +1,11 @@
 <html>
   <head>
     <title>five node example</title>
-    <script src="build/sigma.js"></script>
-    <script src="build/plugins/sigma.renderers.edgeLabels/settings.js"></script>
-    <script src="build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
-    <script src="build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
-    <script src="build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
+    <script src="../build/sigma.js"></script>
+    <script src="../build/plugins/sigma.renderers.edgeLabels/settings.js"></script>
+    <script src="../build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js"></script>
+    <script src="../build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js"></script>
+    <script src="../build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js"></script>
     <style>
       html { height:100%;}
       body { height:100%;}
@@ -16,8 +16,8 @@
     <div id='sigma-container'></div>
     <!-- <img src="example.png" width="800" height="500"> -->
 
-    <!-- <button onclick="updateGraph1()">Try it1</button>
-    <button onclick="updateGraph2()">Try it2</button>
+    <button onclick="updateGraph()">Try it1</button>
+    <!-- <button onclick="updateGraph2()">Try it2</button>
     <button onclick="updateGraph3()">Try it3</button> -->
     <script>
       // Initialise sigma:
@@ -81,11 +81,11 @@
       s.graph.read(graph);
       s.refresh(graph);
 
-      // function updateGraph1() {
-      //   console.log('click');
-      //   s.graph.read(graph2);
-      //   s.refresh();
-      // };
+      function updateGraph() {
+        console.log('click');
+        s.graph.read(graph2);
+        s.refresh();
+      };
       
       // function updateGraph2() {
       //   console.log('click');
