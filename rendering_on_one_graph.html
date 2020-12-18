@@ -1,0 +1,388 @@
+<html>
+  <head>
+    <title>example from figma</title>
+    <script src='build/sigma.js'></script>
+    <script src='build/plugins/sigma.renderers.edgeLabels/settings.js'></script>
+    <script src='build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.def.js'></script>
+    <script src='build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curve.js'></script>
+    <script src='build//plugins/sigma.renderers.edgeLabels/sigma.canvas.edges.labels.curvedArrow.js'></script>
+    <style>
+      html { height:100%;}
+      body { height:100%;}
+      #sigma-container { width:100%; height:95%;  background-color:'white'; }
+    </style>
+  </head>
+  <body>
+    <!-- <button onmouseover="updateGraph1()" onmouseout="updateGraph()">basics</button>
+    <button onmouseover="updateGraph2()" onmouseout="updateGraph()">payment_banks</button>
+    <button onmouseover="updateGraph3()" onmouseout="updateGraph()">exchange</button>
+    <button onmouseover="updateGraph4()" onmouseout="updateGraph()">lending</button>
+    <button onmouseover="updateGraph5()" onmouseout="updateGraph()">digital_assets</button>
+    <button onmouseover="updateGraph5()" onmouseout="updateGraph()">tech</button> -->
+    <button onclick="updateGraph1()">basics</button>
+    <button onclick="updateGraph2()">payment_banks</button>
+    <button onclick="updateGraph3()">exchange</button>
+    <button onclick="updateGraph4()">lending</button>
+    <button onclick="updateGraph5()">digital_assets</button>
+    <button onclick="updateGraph6()">tech</button>
+    <div><button onclick="updateGraph()">main</button></div>
+    <div id='sigma-container'></div>
+    <script>
+    
+      // Initialise sigma:
+      var s = new sigma(
+        {
+          renderer: {
+            container: document.getElementById('sigma-container'),
+            type: 'canvas'
+          },
+          settings: {
+            enableHovering: false,
+            defaultLabelColor: 'white',
+            nodesPowRatio: 1,
+            edgesPowRatio: 1,
+            maxNodeSize: 30,  //change number for Nodes size
+            maxEdgeSize: 0.2, //change number for Edges size
+            edgeLabelSize: 'proportional',
+            mouseWheelEnabled: false
+          }
+        }
+      );
+      
+      // Create a graph object
+      var graph = {
+        nodes: [
+          { id: 'n1', label: 'Policies', x: 0, y: 0, size: 120, color: '#686fb4' },
+          { id: 'n2', label: 'Training', x: 0.02, y: -0.06, size: 120, color: '#686fb4' },
+          { id: 'n3', label: 'Reports', x: 0.06, y: -0.01, size: 120, color: '#686fb4' },
+          { id: 'n4', label: 'Outside\nBusiness\nInternet', x: 0.04, y: 0.05, size: 120, color: '#686fb4' },
+          { id: 'n5', label: 'Issue\nManagment', x: -0.02, y: 0.06, size: 120, color: '#686fb4' },
+          { id: 'n6', label: 'Privacy', x: -0.06, y: 0.01, size: 120, color: '#686fb4' },
+          { id: 'n7', label: 'Events', x: -0.04, y: -0.05, size: 120, color: '#686fb4' },
+          { id: 'n8', label: 'KYC/ AML/\nSanctions', x: 0.08, y: -0.07, size: 100, color: '#4ec6df' },
+          { id: 'n9', label: 'Testing', x: 0.13, y: -0.11, size: 85, color: '#e1e2f0' },
+          { id: 'n10', label: 'Risk\nAssesment', x: 0.12, y: -0.03, size: 85, color: '#e1e2f0' },
+          { id: 'n11', label: 'Audits', x: 0.11, y: 0.03, size: 100, color: '#4ec6df' },
+          { id: 'n12', label: 'Vendor Due\nDiligence', x: 0.015, y: 0.11, size: 100, color: '#4ec6df' },
+          { id: 'n13', label: 'New\nProduct\nApproval', x: -0.08, y: 0.08, size: 100, color: '#4ec6df' },
+          { id: 'n14', label: 'Complaints', x: -0.12, y: 0.03, size: 100, color: '#4ec6df' },
+          { id: 'n15', label: 'Advertising\n& Marketing', x: -0.1, y: -0.04, size: 100, color: '#4ec6df' },
+          { id: 'n16', label: 'Market\nManipu-\nlation', x: 0.17, y: -0.07, size: 85, color: '#e1e2f0' },
+          { id: 'n17', label: 'Suitablity', x: 0.2, y: -0.01, size: 85, color: '#e1e2f0' },
+          { id: 'n18', label: 'Conflict', x: 0.09, y: 0.09, size: 100, color: '#4ec6df' },
+          { id: 'n19', label: 'Best\nExecution', x: -0.14, y: 0.09, size: 85, color: '#e1e2f0' },
+          { id: 'n20', label: 'Regulatory\nEngagment', x: -0.19, y: 0.02, size: 85, color: '#e1e2f0' },
+          { id: 'n21', label: 'Personal\nTrading', x: -0.08, y: -0.1, size: 85, color: '#e1e2f0' },
+          { id: 'n22', label: 'Communi\ncation\nwith\npublic', x: 0.16, y: 0.04, size: 85, color: '#e1e2f0' },
+          { id: 'n23', label: 'Gover-\nnance', x: -0.2, y: -0.04, size: 85, color: '#e1e2f0' },
+          { id: 'n24', label: 'Concen\ntration', x: -0.02, y: -0.11, size: 100, color: '#4ec6df' },
+          { id: 'n25', label: 'Credit\nDenials', x: 0.14, y: 0.11, size: 85, color: '#e1e2f0' },
+          { id: 'n26', label: 'Truth in\nLending', x: 0.06, y: 0.13, size: 85, color: '#e1e2f0' },
+          { id: 'n27', label: 'CRA', x: -0.04, y: 0.13, size: 85, color: '#e1e2f0' },
+          { id: 'n28', label: 'UDAAP', x: -0.15, y: -0.01, size: 85, color: '#e1e2f0' },
+          { id: 'n29', label: 'Lending\nLimits', x: -0.16, y: -0.08, size: 85, color: '#e1e2f0' },
+          { id: 'n30', label: 'Conduct', x: 0.21, y: 0.08, size: 85, color: '#e1e2f0' },
+        ],
+        edges: [
+        ]
+      }
+      
+      var basics_data = {
+        nodes: [
+          { id: 'n1', color: '#21205f' },
+          { id: 'n2', color: '#21205f' },
+          { id: 'n3', color: '#21205f' },
+          { id: 'n4', color: '#21205f' },
+          { id: 'n5', color: '#21205f' },
+          { id: 'n6', color: '#21205f' },
+          { id: 'n7', color: '#21205f' },
+          { id: 'n8', color: '#dbf4f9' },
+          { id: 'n9', color: '#f9f9fc' },
+          { id: 'n10', color: '#f9f9fc' },
+          { id: 'n11', color: '#dbf4f9' },
+          { id: 'n12', color: '#dbf4f9' },
+          { id: 'n13', color: '#dbf4f9' },
+          { id: 'n14', color: '#dbf4f9' },
+          { id: 'n15', color: '#dbf4f9' },
+          { id: 'n16', color: '#f9f9fc' },
+          { id: 'n17', color: '#f9f9fc' },
+          { id: 'n18', color: '#dbf4f9' },
+          { id: 'n19', color: '#f9f9fc' },
+          { id: 'n20', color: '#f9f9fc' },
+          { id: 'n21', color: '#f9f9fc' },
+          { id: 'n22', color: '#f9f9fc' },
+          { id: 'n23', color: '#f9f9fc' },
+          { id: 'n24', color: '#dbf4f9' },
+          { id: 'n25', color: '#f9f9fc' },
+          { id: 'n26', color: '#f9f9fc' },
+          { id: 'n27', color: '#f9f9fc' },
+          { id: 'n28', color: '#f9f9fc' },
+          { id: 'n29', color: '#f9f9fc' },
+          { id: 'n30', color: '#f9f9fc' }
+        ]
+      }
+      
+      var payment_banks_data = {
+        nodes: [
+          { id: 'n1', color: '#21205f' },
+          { id: 'n2', color: '#21205f' },
+          { id: 'n3', color: '#21205f' },
+          { id: 'n4', color: '#21205f' },
+          { id: 'n5', color: '#21205f' },
+          { id: 'n6', color: '#21205f' },
+          { id: 'n7', color: '#21205f' },
+          { id: 'n8', color: '#21205f' },
+          { id: 'n9', color: '#21205f' },
+          { id: 'n10', color: '#21205f' },
+          { id: 'n11', color: '#21205f' },
+          { id: 'n12', color: '#21205f' },
+          { id: 'n13', color: '#21205f' },
+          { id: 'n14', color: '#21205f' },
+          { id: 'n15', color: '#21205f' },
+          { id: 'n16', color: '#f9f9fc' },
+          { id: 'n17', color: '#f9f9fc' },
+          { id: 'n18', color: '#f9f9fc' },
+          { id: 'n19', color: '#f9f9fc' },
+          { id: 'n20', color: '#f9f9fc' },
+          { id: 'n21', color: '#f9f9fc' },
+          { id: 'n22', color: '#f9f9fc' },
+          { id: 'n23', color: '#f9f9fc' },
+          { id: 'n24', color: '#dbf4f9' },
+          { id: 'n25', color: '#f9f9fc' },
+          { id: 'n26', color: '#f9f9fc' },
+          { id: 'n27', color: '#f9f9fc' },
+          { id: 'n28', color: '#f9f9fc' },
+          { id: 'n29', color: '#f9f9fc' },
+          { id: 'n30', color: '#f9f9fc' }
+        ]
+      }
+      
+      var exchange_data = {
+        nodes: [
+          { id: 'n1', color: '#21205f' },
+          { id: 'n2', color: '#21205f' },
+          { id: 'n3', color: '#21205f' },
+          { id: 'n4', color: '#21205f' },
+          { id: 'n5', color: '#21205f' },
+          { id: 'n6', color: '#21205f' },
+          { id: 'n7', color: '#21205f' },
+          { id: 'n8', color: '#21205f' },
+          { id: 'n9', color: '#f9f9fc' },
+          { id: 'n10', color: '#f9f9fc' },
+          { id: 'n11', color: '#dbf4f9' },
+          { id: 'n12', color: '#dbf4f9' },
+          { id: 'n13', color: '#21205f' },
+          { id: 'n14', color: '#dbf4f9' },
+          { id: 'n15', color: '#dbf4f9' },
+          { id: 'n16', color: '#21205f' },
+          { id: 'n17', color: '#21205f' },
+          { id: 'n18', color: '#21205f' },
+          { id: 'n19', color: '#21205f' },
+          { id: 'n20', color: '#21205f' },
+          { id: 'n21', color: '#21205f' },
+          { id: 'n22', color: '#f9f9fc' },
+          { id: 'n23', color: '#f9f9fc' },
+          { id: 'n24', color: '#dbf4f9' },
+          { id: 'n25', color: '#f9f9fc' },
+          { id: 'n26', color: '#f9f9fc' },
+          { id: 'n27', color: '#f9f9fc' },
+          { id: 'n28', color: '#f9f9fc' },
+          { id: 'n29', color: '#f9f9fc' },
+          { id: 'n30', color: '#f9f9fc' }
+        ]
+      }
+      
+      var lending_data = {
+        nodes: [
+          { id: 'n1', color: '#21205f' },
+          { id: 'n2', color: '#21205f' },
+          { id: 'n3', color: '#21205f' },
+          { id: 'n4', color: '#21205f' },
+          { id: 'n5', color: '#21205f' },
+          { id: 'n6', color: '#21205f' },
+          { id: 'n7', color: '#21205f' },
+          { id: 'n8', color: '#21205f' },
+          { id: 'n9', color: '#f9f9fc' },
+          { id: 'n10', color: '#f9f9fc' },
+          { id: 'n11', color: '#dbf4f9' },
+          { id: 'n12', color: '#dbf4f9' },
+          { id: 'n13', color: '#dbf4f9' },
+          { id: 'n14', color: '#dbf4f9' },
+          { id: 'n15', color: '#dbf4f9' },
+          { id: 'n16', color: '#f9f9fc' },
+          { id: 'n17', color: '#f9f9fc' },
+          { id: 'n18', color: '#dbf4f9' },
+          { id: 'n19', color: '#f9f9fc' },
+          { id: 'n20', color: '#f9f9fc' },
+          { id: 'n21', color: '#f9f9fc' },
+          { id: 'n22', color: '#f9f9fc' },
+          { id: 'n23', color: '#f9f9fc' },
+          { id: 'n24', color: '#21205f' },
+          { id: 'n25', color: '#21205f' },
+          { id: 'n26', color: '#21205f' },
+          { id: 'n27', color: '#21205f' },
+          { id: 'n28', color: '#21205f' },
+          { id: 'n29', color: '#21205f' },
+          { id: 'n30', color: '#f9f9fc' }
+        ]
+      }
+      
+      var digital_assets_data = {
+        nodes: [
+          { id: 'n1', color: '#21205f' },
+          { id: 'n2', color: '#21205f' },
+          { id: 'n3', color: '#21205f' },
+          { id: 'n4', color: '#21205f' },
+          { id: 'n5', color: '#21205f' },
+          { id: 'n6', color: '#21205f' },
+          { id: 'n7', color: '#21205f' },
+          { id: 'n8', color: '#21205f' },
+          { id: 'n9', color: '#f9f9fc' },
+          { id: 'n10', color: '#f9f9fc' },
+          { id: 'n11', color: '#21205f' },
+          { id: 'n12', color: '#dbf4f9' },
+          { id: 'n13', color: '#dbf4f9' },
+          { id: 'n14', color: '#21205f' },
+          { id: 'n15', color: '#21205f' },
+          { id: 'n16', color: '#f9f9fc' },
+          { id: 'n17', color: '#f9f9fc' },
+          { id: 'n18', color: '#dbf4f9' },
+          { id: 'n19', color: '#f9f9fc' },
+          { id: 'n20', color: '#f9f9fc' },
+          { id: 'n21', color: '#f9f9fc' },
+          { id: 'n22', color: '#21205f' },
+          { id: 'n23', color: '#21205f' },
+          { id: 'n24', color: '#21205f' },
+          { id: 'n25', color: '#f9f9fc' },
+          { id: 'n26', color: '#f9f9fc' },
+          { id: 'n27', color: '#f9f9fc' },
+          { id: 'n28', color: '#f9f9fc' },
+          { id: 'n29', color: '#f9f9fc' },
+          { id: 'n30', color: '#f9f9fc' }
+        ]
+      }
+      
+      var tech_data = {
+        nodes: [
+          { id: 'n1', color: '#21205f' },
+          { id: 'n2', color: '#21205f' },
+          { id: 'n3', color: '#21205f' },
+          { id: 'n4', color: '#21205f' },
+          { id: 'n5', color: '#21205f' },
+          { id: 'n6', color: '#21205f' },
+          { id: 'n7', color: '#21205f' },
+          { id: 'n8', color: '#dbf4f9' },
+          { id: 'n9', color: '#f9f9fc' },
+          { id: 'n10', color: '#f9f9fc' },
+          { id: 'n11', color: '#21205f' },
+          { id: 'n12', color: '#21205f' },
+          { id: 'n13', color: '#dbf4f9' },
+          { id: 'n14', color: '#dbf4f9' },
+          { id: 'n15', color: '#dbf4f9' },
+          { id: 'n16', color: '#f9f9fc' },
+          { id: 'n17', color: '#f9f9fc' },
+          { id: 'n18', color: '#dbf4f9' },
+          { id: 'n19', color: '#f9f9fc' },
+          { id: 'n20', color: '#f9f9fc' },
+          { id: 'n21', color: '#f9f9fc' },
+          { id: 'n22', color: '#f9f9fc' },
+          { id: 'n23', color: '#f9f9fc' },
+          { id: 'n24', color: '#dbf4f9' },
+          { id: 'n25', color: '#f9f9fc' },
+          { id: 'n26', color: '#f9f9fc' },
+          { id: 'n27', color: '#f9f9fc' },
+          { id: 'n28', color: '#f9f9fc' },
+          { id: 'n29', color: '#f9f9fc' },
+          { id: 'n30', color: '#21205f' }
+        ]
+      }
+      
+      s.cameras[0].goTo({ x: 0, y: 0, angle: 0, ratio: 0.5 });
+      
+      // Load the graph in sigma
+      
+      s.graph.read(graph);
+      s.refresh(graph);
+      
+      function updateGraph() {
+        s.graph.clear(graph);
+        s.refresh();
+        s.graph.read(graph);
+        s.refresh();
+      };
+      
+      function updateGraph1() {
+        console.log('updateGraph_basics');
+        s.graph.nodes().forEach(function(node) {
+          let nodeToUpdate = basics_data.nodes.find(function(n) { return n.id == node.id })
+          if (nodeToUpdate) {
+            node.color = nodeToUpdate.color;
+            console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.refresh();
+      };
+      
+      function updateGraph2() {
+        console.log('updateGraph_payment_banks');
+        s.graph.nodes().forEach(function(node) {
+          let nodeToUpdate = payment_banks_data.nodes.find(function(n) { return n.id == node.id })
+          if (nodeToUpdate) {
+            node.color = nodeToUpdate.color;
+            console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.refresh();
+      };
+      
+      function updateGraph3() {
+        console.log('updateGraph_exchange');
+        s.graph.nodes().forEach(function(node) {
+          let nodeToUpdate = exchange_data.nodes.find(function(n) { return n.id == node.id })
+          if (nodeToUpdate) {
+            node.color = nodeToUpdate.color;
+            console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.refresh();
+      };
+      
+      function updateGraph4() {
+        console.log('updateGraph_lending');
+        s.graph.nodes().forEach(function(node) {
+          let nodeToUpdate = lending_data.nodes.find(function(n) { return n.id == node.id })
+          if (nodeToUpdate) {
+            node.color = nodeToUpdate.color;
+            console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.refresh();
+      };
+      
+      function updateGraph5() {
+        console.log('updateGraph_digital_assets');
+        s.graph.nodes().forEach(function(node) {
+          let nodeToUpdate = digital_assets_data.nodes.find(function(n) { return n.id == node.id })
+          if (nodeToUpdate) {
+            node.color = nodeToUpdate.color;
+            console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.refresh();
+      };
+      
+      function updateGraph6() {
+        console.log('updateGraph_tech');
+        s.graph.nodes().forEach(function(node) {
+          let nodeToUpdate = tech_data.nodes.find(function(n) { return n.id == node.id })
+          if (nodeToUpdate) {
+            node.color = nodeToUpdate.color;
+            console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.refresh();
+      };
+      
+    </script>
+  </body>
+</html>
