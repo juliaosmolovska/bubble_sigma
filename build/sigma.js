@@ -9671,8 +9671,7 @@
       lineheight = 10;
       w = 45;
       z = 15;
-    } else if (node.color == '#f9f9fc') { //the smallest on the secondary screen
-      context.fillStyle = '#d3d2df';
+    } else if (node.color == 'rgb(225, 226, 240, 0.4)') { //the smallest on the secondary screen
       context.font = 'bold 10px Tahoma';
       x = 10;
       y = 10;
