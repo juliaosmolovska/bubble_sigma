@@ -165,7 +165,22 @@
           { id: 'e13', color: '#696969'},
         ]
       }
-      
+      // { id: '2e14', source: '2n2', target: '2n8', color: '#696969', type: 'line', size: 1},
+      // { id: '2e15', source: '2n3', target: '2n8', color: '#696969', type: 'line', size: 1},
+      // { id: '2e16', source: '2n8', target: '2n9', color: '#696969', type: 'line', size: 1},
+      // { id: '2e17', source: '2n8', target: '2n10', color: '#696969', type: 'line', size: 1},
+      // { id: '2e18', source: '2n10', target: '2n9', color: '#696969', type: 'line', size: 1},
+      // { id: '2e19', source: '2n11', target: '2n10', color: '#696969', type: 'line', size: 1},
+      // { id: '2e20', source: '2n11', target: '2n3', color: '#696969', type: 'line', size: 1},
+      // { id: '2e21', source: '2n12', target: '2n4', color: '#696969', type: 'line', size: 1},
+      // { id: '2e22', source: '2n13', target: '2n5', color: '#696969', type: 'line', size: 1},
+      // { id: '2e23', source: '2n12', target: '2n13', color: '#696969', type: 'line', size: 1},
+      // { id: '2e24', source: '2n6', target: '2n13', color: '#696969', type: 'line', size: 1},
+      // { id: '2e25', source: '2n6', target: '2n14', color: '#696969', type: 'line', size: 1},
+      // { id: '2e26', source: '2n13', target: '2n14', color: '#696969', type: 'line', size: 1},
+      // { id: '2e27', source: '2n6', target: '2n15', color: '#696969', type: 'line', size: 1},
+      // { id: '2e28', source: '2n14', target: '2n15', color: '#696969', type: 'line', size: 1},
+      // { id: '2e29', source: '2n7', target: '2n15', color: '#696969', type: 'line', size: 1},
       var payment_banks_data = {
         nodes: [
           { id: 'n1', color: '#21205f' },
@@ -198,6 +213,37 @@
           { id: 'n28', color: '#f9f9fc' },
           { id: 'n29', color: '#f9f9fc' },
           { id: 'n30', color: '#f9f9fc' }
+        ],
+        edges: [
+          { id: 'e1', color: '#696969'},
+          { id: 'e2', color: '#696969'},
+          { id: 'e3', color: '#696969'},
+          { id: 'e4', color: '#696969'},
+          { id: 'e5', color: '#696969'},
+          { id: 'e6', color: '#696969'},
+          { id: 'e7', color: '#696969'},
+          { id: 'e8', color: '#696969'},
+          { id: 'e9', color: '#696969'},
+          { id: 'e10', color: '#696969'},
+          { id: 'e11', color: '#696969'},
+          { id: 'e12', color: '#696969'},
+          { id: 'e13', color: '#696969'},
+          { id: 'e14', color: '#696969'},
+          { id: 'e15', color: '#696969'},
+          { id: 'e16', color: '#696969'},
+          { id: 'e17', color: '#696969'},
+          { id: 'e18', color: '#696969'},
+          { id: 'e19', color: '#696969'},
+          { id: 'e20', color: '#696969'},
+          { id: 'e21', color: '#696969'},
+          { id: 'e22', color: '#696969'},
+          { id: 'e23', color: '#696969'},
+          { id: 'e24', color: '#696969'},
+          { id: 'e25', color: '#696969'},
+          { id: 'e26', color: '#696969'},
+          { id: 'e27', color: '#696969'},
+          { id: 'e28', color: '#696969'},
+          { id: 'e29', color: '#696969'},
         ]
       }
       
@@ -381,6 +427,13 @@
           if (nodeToUpdate) {
             node.color = nodeToUpdate.color;
             console.log(`node.id ${node.id} - nodeToUpdate ${nodeToUpdate.color}`);
+          }
+        });
+        s.graph.edges().forEach(function(edge) {
+          let edgeToUpdate = payment_banks_data.edges.find(function(e) { return e.id == edge.id })
+          if (edgeToUpdate) {
+            edge.color = edgeToUpdate.color;
+            console.log(`edge.id ${edge.id} - edgeToUpdate ${edgeToUpdate.color}`);
           }
         });
         s.refresh();
