@@ -9672,6 +9672,7 @@
       w = 45;
       z = 15;
     } else if (node.color == 'rgb(225, 226, 240, 0.4)') { //the smallest on the secondary screen
+      context.fillStyle = '#d3d2df';
       context.font = 'bold 10px Tahoma';
       x = 10;
       y = 10;
