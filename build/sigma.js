@@ -9658,7 +9658,7 @@
     var x;
     var y;
     var w;
-    var z;
+    var z; //рухаємось по осі y
     var lineheight;
     
     var lines = node.label.split('\n');
@@ -9669,42 +9669,107 @@
       x = 10;
       y = 10;
       lineheight = 10;
-      w = 45;
-      z = 15;
     } else if (node.color == 'rgb(225, 226, 240, 0.4)') { //the smallest on the secondary screen
       context.fillStyle = '#d3d2df';
       context.font = 'bold 10px Tahoma';
       x = 10;
       y = 10;
       lineheight = 10;
-      w = 45;
-      z = 15;
     } else if ( node.size == '85') {  //the smallest on the secondary screen and hover
       context.fillStyle = '#f8fcfd';
       context.font = 'bold 10px Tahoma';
       x = 10;
       y = 10;
       lineheight = 10;
-      w = 45;
-      z = 15;
     } else if ( node.size == '100') { // medium size
       context.fillStyle = '#f8fcfd';
       context.font = 'bold 12px Tahoma';
       x = 10;
       y = 10;
       lineheight = 15;
-      w = 55;
-      z = 20;
     } else { //with the largest radius
       context.fillStyle = '#f8fcfd';
       context.font = 'bold 14px Tahoma';
       x = 40;
       y = 40;
       lineheight = 20;
-      w = 55;
-      z = 20;
     }
     
+    
+    
+    if (node.id == 'n1') { //Policies
+      w = 60;
+      z = 10;
+    } else if (node.id == 'n2') { //Training
+      w = 60;
+      z = 10;
+    } else if (node.id == 'n3') { //Reports
+      w = 60;
+      z = 10;
+    } else if (node.id == 'n4') { //Outside\nBusiness\nInternet
+      w = 60;
+      z = 30;
+    } else if (node.id == 'n5') { //Issue\nManagment
+      w = 60;
+      z = 20;
+    } else if (node.id == 'n6') { //Privacy
+      w = 60;
+      z = 10;
+    } else if (node.id == 'n7') { //Events
+      w = 60;
+      z = 10;
+    } else if (node.id == 'n8') { //KYC/ AML/\nSanctions
+      w = 50;
+      z = 15;
+    } else if (node.id == 'n9') { //Testing
+      w = 43;
+      z = 10;
+    } else if (node.id == 'n11') { //Audits
+      w = 50;
+      z = 10;
+    } else if (node.id == 'n12') { //Vendor Due\nDiligence
+      w = 50;
+      z = 15;
+    } else if (node.id == 'n13') { //New\nProduct\nApproval
+      w = 50;
+      z = 25;
+    } else if (node.id == 'n14') { //Complaints
+      w = 50;
+      z = 10;
+    } else if (node.id == 'n15') { //Advertising\n& Marketing
+      w = 50;
+      z = 15;
+    } else if (node.id == 'n16') { //Market\nManipu-\nlation
+      w = 43;
+      z = 17;
+    } else if (node.id == 'n17') { //Suitablity
+      w = 43;
+      z = 10;
+    } else if (node.id == 'n18') { //Conflict
+      w = 50;
+      z = 10;
+    } else if (node.id == 'n19') { //Best\nExecution
+      w = 43;
+      z = 15;
+    } else if (node.id == 'n22') { //Communi\ncation\nwith\npublic
+      w = 43;
+      z = 22;
+    } else if (node.id == 'n24') { //Concen-\ntration
+      w = 50;
+      z = 15;
+    } else if (node.id == 'n27') { //CRA
+      w = 43;
+      z = 10;
+    } else if (node.id == 'n28') { //UDAAP
+      w = 43;
+      z = 10;
+    } else if (node.id == 'n30') { //Lending\nLimits
+      w = 43;
+      z = 10;
+    }  else {
+      w = 43;
+      z = 15;
+    }
     
     for (var i = 0; i<lines.length; i++) {
       context.fillText(
